@@ -261,6 +261,8 @@ impl Application for UadGui {
                 #[allow(unused_must_use)]
                 {
                     self.update(Message::SettingsAction(SettingsMessage::LoadDeviceSettings));
+                    self.update(Message::AppsAction(AppsMessage::ToggleAllSelected(false)));
+                    self.update(Message::AppsAction(AppsMessage::ClearSelectedPackages));
                 }
                 self.update(Message::AppsAction(AppsMessage::LoadPhonePackages((
                     self.apps_view.uad_lists.clone(),
